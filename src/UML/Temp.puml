@@ -1,0 +1,84 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+entity Topics{
+    Title
+    Description
+}
+
+entity NewsItem{
+    Title
+    Description
+    views
+}
+
+entity Edition{
+    date
+    time
+    duration int check (duration between 0 to 1800)
+    host
+}
+
+entity Uploads{
+    Title
+    Date
+    Duration
+    CPR
+    First Name
+    Last Name
+    Street Name
+    Civic Number
+    ZIP code
+    Country
+}
+
+entity Journalists{
+    CPR primary key
+    First Name
+    Last Name
+    Street Name
+    Civic Number
+    ZIP code
+    Country
+}
+
+entity NewsItem{
+
+}
+
+entity Curated{
+    CPR
+    Title
+    Role
+}
+
+entity NewsBits{
+    Title
+
+}
+
+
+Journalists - Curated
+Curated - Topics
+Topics - NewsItem
+NewsItem }|-- Edition
+Edition }o--|| Journalists
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
